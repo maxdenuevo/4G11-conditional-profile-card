@@ -1,39 +1,6 @@
-<!--hide-->
-# Conditional Profile Card
-<!--endhide-->
+# Exercise - Conditional Profile Card Generator
 
-**Note:** If you are working locally, make sure that you have node.js installed in your computer by typing in your terminal:
-
-```bash
-$ node -v
-```
-
-## 🌱 How to start this project
-
-This project comes with the necessary files to start working immediately.
-
-We recommend opening this very same repository using a provisioning tool like [Codespaces](https://4geeks.com/lesson/what-is-github-codespaces) (recommended) or [Gitpod](https://4geeks.com/lesson/how-to-use-gitpod). Alternatively, you can clone it on your local computer using the `git clone` command.
-
-This is the repository you need to open:
-
-```text
-https://github.com/breatheco-de/exercise-conditional-profile-card.git
-```
-
-**👉 Please follow these steps on** [how to start a coding project](https://4geeks.com/lesson/how-to-start-a-project).
-
-To see the result in the browser, you will need to start the project by running the following command in your terminal:
-```bash
-$ npm run start
-```
-
-> 💡 Important: Remember to save and upload your code to GitHub by creating a new repository, updating the remote (`git remote set-url origin <your new url>`), and uploading the code to your new repository using the `add`, `commit` and `push` commands from the git terminal.
-
-## Some context
-
-As a web developer, you will be creating lots and lots of dynamic HTML using JavaScript based algorithms.
-
-In this exercise, you have to create the HTML code needed to render a profile card based on a series of variables that could change in value during runtime. Here is an example of the profile card:
+Create the HTML code needed to render a profile card based on a series of variables that could change in value during runtime. Here is an example of the profile card:
 
 ![Conditional Profile Card](https://github.com/breatheco-de/exercise-conditional-profile-card/blob/master/preview.gif?raw=true)
 
@@ -72,36 +39,9 @@ console.log(window.variables);
 
 ## 📝 Instructions
 
-These instructions come with a video for better understanding: https://youtu.be/gaVm8eyCqlM
-
 1. Read and understand the `render` function and the value of the `variables` variable that it receives.
 
 2. Change the content of the `render` function to make it render the variables on the card.
-
-## 💡 Attention!
-
-You **do not** need to add any event listeners to the elements that are already built in the project. This is already being done by this part of the code:
-
-```javascript
-document.querySelectorAll(".picker").forEach(function(elm) {
-    elm.addEventListener("change", function(e) {
-      // <- add a listener to every input
-      const attribute = e.target.getAttribute("for"); // when any input changes, collect the value
-      let values = {};
-      values[attribute] =
-        this.value == "" || this.value == "null"
-          ? null
-          : this.value == "true"
-          ? true
-          : this.value == "false"
-          ? false
-          : this.value;
-      render(Object.assign(window.variables, values)); // render again the card with new values
-    });
-  });
-```
-
-So when the elements contents "change" they will already update the variable values for each element. All you need to do is to update the HTML content inside `render` function, as mentioned on instruction 1.
 
 ## Initial Variable Values
 
@@ -121,24 +61,3 @@ So when the elements contents "change" they will already update the variable val
 | country | string | null | The name of the user to be displayed on the profile |
 | city | string | null | the city of the user to be displayed on the profile |
 
-## Hard-Coded HTML
-
-This is an example of a possible HTML output, you will have to replace the name, last name, etc. With the values that these variables may have.
-
-```html
-<div class="widget">
-  <div class="cover"><img src="https://the_url.com/for_the_background.png" /></div>
-  <img src="https://the_url.com/for_the_image.png" class="photo" />
-  <h1>Ryan Boylett</h1>
-  <h2>Web Developer</h2>
-  <h3>Miami, USA</h3>
-  <ul class="position-right">
-    <li><a href="https://twitter.com/alesanchezr"><i class="fa fa-twitter"></i></a></li>
-    <li><a href="https://github.com/alesanchezr"><i class="fa fa-github"></i></a></li>
-    <li><a href="https://linkedin.com/alesanchezr"><i class="fa fa-linkedin"></i></a></li>
-    <li><a href="https://instagram.com/alesanchezr"><i class="fa fa-instagram"></i></a></li>
-  </ul>
-</div>
-```
-
-This and many other projects are built by students as part of the 4Geeks Academy [Coding Bootcamp](https://4geeksacademy.com/us/coding-bootcamp) by [Alejandro Sanchez](https://twitter.com/alesanchezr) and many other contributors. Find out more about our [Full Stack Developer Course](https://4geeksacademy.com/us/coding-bootcamps/part-time-full-stack-developer), and [Data Science Bootcamp](https://4geeksacademy.com/us/coding-bootcamps/datascience-machine-learning).
